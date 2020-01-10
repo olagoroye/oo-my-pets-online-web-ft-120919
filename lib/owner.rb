@@ -25,9 +25,33 @@ class Owner
   @@all.clear
   end
   def buy_cat(name)
-    Cat.name.count {|cat| cat.name == self}
+    Cat.new(name, self)
   
   end
+  def buy_dog(name)
+    Dog.new(name, self)
+  end
+  def walk_dogs
+    Dog.all.each { |dog| dog.mood = "happy" if dog.owner == self }
+  end
+  def feed_cats
+    Cat.all.each { |cat| cat.mood = "happy" if cat.owner == self }
+  end
+  
+#   def sell_pets
+#   Dog.all.each do |dog| 
+#     dog.mood = "nervous" 
+#     dog.owner = nil
+#   end
+# end
+    
+#   Cat.all.each do |cat| 
+#     cat.mood = "nervous" 
+#     cat.owner = nil
+#   end
+# end
+    
+  
 end
 
 # @owner.cats.each do |cat|
