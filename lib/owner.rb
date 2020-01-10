@@ -50,7 +50,7 @@ def sell_pets
     cat.owner = nil
   end
 
-  
+end
 end
 
 # @owner.cats.each do |cat|
